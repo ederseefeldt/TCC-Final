@@ -1,0 +1,1802 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Nunito:wght@600&display=swap');
+
+:root {
+
+    --cor-1: #0066db; /*#b95d07*/
+    --cor-2: #3a3a3a;
+    --cor-3: #ffffff;
+    --cor-4: #f7f7f7;
+    --cor-5: #DC3545;
+    --cor-6: #00a000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    cursor: default;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background-color:var(--cor-3);
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    grid-column: 1;
+    background-color: var(--cor-2);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 70% 15%;
+}
+
+header .login {
+    position: relative;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 2vw;
+}
+
+header .login h1 {
+    font-size: 1.3vw;
+    color: var(--cor-3);
+}
+
+header .login h1 span {
+    color: var(--cor-1);
+}
+
+header .login .menu {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2vw;
+    height: 100%;
+    color: var(--cor-3);
+}
+
+header .login .menu li {
+    height: 100%;
+    position: relative;
+}
+
+header .login .menu li:hover {
+    background-color: var(--cor-3);
+    color: var(--cor-1);
+    border-radius: 1.5vw 0 0 1.5vw;
+}
+
+header .login .menu li i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1vw;
+}
+
+header .login .menu li .i-options ul {
+    background-color: var(--cor-3);
+    position: absolute;
+    width: 10vw;
+    z-index: 100;
+    border-right: 0.2vw solid var(--cor-2);
+    border-bottom: 0.2vw solid var(--cor-2);
+    border-bottom-right-radius: 1vw;
+}
+
+header .login .menu li .i-options ul .i-titulo {
+    color: var(--cor-1);
+    display: flex;
+    justify-content: left;
+    font-size: 1.1vw;
+}
+
+header .login .menu li .i-options ul li {
+    height: 5vh;
+    border-radius: 0;
+    color: var(--cor-2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1vw;
+    background: none;
+}
+
+header .login .menu li .i-options ul li a {
+    font-size: 0.9vw;
+    color: var(--cor-2);
+}
+
+header .login .menu li .i-options ul li i {
+    width: 2vw;
+    font-size: 0.9vw;
+}
+
+header .login .menu li .i-options ul li:hover i {
+    color: var(--cor-1);
+}
+
+header nav {
+    grid-row: 2;
+}
+
+header nav ul {
+    margin-top: 5vh;
+}
+
+header nav ul li {
+    margin: 0 0 1vh 2vw;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    color: var(--cor-3);
+    position: relative;
+}
+
+header nav ul li i {
+    width: 4vw;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+header nav ul li a {
+    font-family: var(--fonte-1);
+    font-size: 1.3vw;
+    color: var(--cor-3);
+    width: 100%;
+    cursor: default;
+    position: absolute;
+    padding-left: 4vw;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li:hover {
+    background-color: var(--cor-3);
+    border-radius: 50px 0 0 50px;
+    color: var(--cor-1);
+}
+
+header nav ul li:hover a {
+    color: var(--cor-2);
+}
+
+.active {
+    background-color: var(--cor-3);
+    border-radius: 50px 0 0 50px;
+    color: var(--cor-1);
+}
+
+.active a {
+    color: var(--cor-2);
+}
+
+header footer {
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header footer h1 {
+    font-size: 1vw;
+    color: var(--cor-3);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section {
+    grid-column: 2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --> Início da estilização da aba Visão Geral */
+
+.visao-geral {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: 40vh 60vh;
+    grid-template-areas: 
+        'anotacoes acesso calendario'
+        'anotacoes faturamento faturamento';
+}
+
+/* --> Inicio do quadro de anotações */
+.visao-geral .anotacoes {
+    grid-area: anotacoes;
+    margin: 1vw 0.5vw 1vw 1vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7vh 79vh 10vh;
+    background-color: var(--cor-4);
+    border-radius: 1vw;
+    position: relative;
+}
+
+.titulos-vg {
+    display: flex;
+    align-items: center;
+    font-size: 1.6vw;
+}
+
+.titulos-vg i {
+    color: var(--cor-1);
+    width: 3vw;
+    text-align: center;
+}
+
+.anotacoes .quadro-anotacoes {
+    grid-row: 2;
+    border: 0.2vw solid var(--cor-2);
+    background-color: var(--cor-3);
+    overflow: auto;
+}
+
+.anotacoes .quadro-anotacoes::-webkit-scrollbar{
+    background-color: var(--cor-2);
+    width: 0.4vw;
+}
+
+.anotacoes .quadro-anotacoes::-webkit-scrollbar-thumb {
+    background-color: var(--cor-1);
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+.anotacoes .quadro-anotacoes .anotacao {
+    width: 100%;
+    height: 15vh;
+    border-bottom: 0.2vw solid var(--cor-2);
+    position: relative;
+    overflow: hidden;
+    margin: 0.1vw 0 0.1vw 0;
+}
+
+.anotacoes .quadro-anotacoes .anotacao .nota {
+    margin-left: 10%;
+    font-family: var(--fonte-1);
+}
+
+.anotacoes .quadro-anotacoes .anotacao h1 {
+    font-size: 1vw;
+    margin: 0.25vh 0.5vw 0.1vw 0.5vw;
+    color: var(--cor-1);
+}
+
+.anotacoes .quadro-anotacoes .anotacao h2 {
+    font-size: 0.8vw;
+    margin: 0.1vw 0.5vw 0.3vw 0.5vw;
+    color: var(--cor-1);
+}
+
+.anotacoes .quadro-anotacoes .anotacao h2 span {
+    color: var(--cor-2);
+}
+
+.anotacoes .quadro-anotacoes .anotacao p {
+    font-size: 0.8vw;
+    margin: 0 0.5vw 0 0.5vw;    
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+    color: var(--cor-2);
+    height: 30%;
+}
+
+.anotacoes .quadro-anotacoes .anotacao i {
+    position: absolute;
+    right: 1vw;
+    top: 0.5vh;
+    color: var(--cor-2);
+    font-size: 1.5vw;
+    transition: all 0.3s ease;
+}
+
+.anotacoes .quadro-anotacoes .anotacao i:hover {
+    color: var(--cor-1);
+}
+
+.anotacoes .quadro-anotacoes .anotacao .del-edit-anotacao {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.anotacoes .quadro-anotacoes .anotacao .del-edit-anotacao i {
+    position: static;
+    font-size: 1vw;
+}
+
+.anotacoes .crud-anotacoes {
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 1vw;
+}
+
+/* --> Botão CREATE de anotações */
+.anotacoes .crud-anotacoes .c-anotacao {
+    background-color: var(--cor-2);
+    width: 10vw;
+    height: 4vh;
+    border: none;
+    border-radius: 1vw;
+    color: var(--cor-3);
+    font-size: 1vw;
+}
+
+.anotacoes .crud-anotacoes .c-anotacao i {
+    margin-right: 0.5vw;
+    transition: all 0.3s ease;
+}
+
+.anotacoes .crud-anotacoes .c-anotacao:hover i {
+    color: var(--cor-1);
+}
+/* --> Botão CREATE de anotações */
+/* --> Inicio do quadro de nova anotação */
+.anotacoes .nova-anotacao {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 92%;
+    background-color: var(--cor-4);
+    grid-template-rows: 7vh 1fr;
+    border-radius: 1vw;
+}
+
+.nova-anotacao .form-anotacao {
+    grid-row: 2;
+    border-radius: 0.5vw;
+    padding: 1vw;
+}
+
+.nova-anotacao .form-anotacao div {
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3vw;
+}
+
+.nova-anotacao .form-anotacao div input {
+    width: 100%;
+    height: 5vh;
+    background: var(--cor-3);
+    border: 0.1vw solid var(--cor-2);
+    border-radius: 0.4vw;
+    outline: 0;
+    font-size: 1vw;
+    font-family: var(--fonte-1);
+    color: var(--cor-2);
+    appearance: none;
+}
+
+.nova-anotacao .form-anotacao div textarea {
+    width: 100%;
+    height: 40vh;
+    background: var(--cor-3);
+    border: 0.1vw solid var(--cor-2);
+    border-radius: 0.4vw;
+    outline: 0;
+    font-size: 1vw;
+    font-family: var(--fonte-1);
+    color: var(--cor-2);
+    resize: none;
+}
+
+.nova-anotacao .form-anotacao .btn-reset-anotacao {
+    margin-top: 0.8vw;
+    width: 5vw;
+    height: 3vh;
+    border-radius: 2vw;
+    font-size: 1vw;
+}
+
+.nova-anotacao .form-anotacao .btn-submit-anotacao {
+    margin-top: 0.8vw;
+    width: 5vw;
+    height: 3vh;
+    border-radius: 2vw;
+    font-size: 1vw;
+}
+/* --> Fim do quadro de nova anotação */
+
+/* --> Inicio do quadro de acesso rápido */
+.visao-geral .acesso-rapido {
+    grid-area: acesso;
+    background-color: var(--cor-4);
+    border-radius: 1vw;
+    margin: 1vw 0.5vw 0.5vw 0.5vw;
+    display: grid;
+    grid-template-rows: 7vh 1fr;
+}
+
+.visao-geral .acesso-rapido .titulos-vg {
+    grid-template-rows: 1;
+}
+
+.visao-geral .acesso-rapido .btns-acesso-rapido {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 0.5vw;
+}
+
+.visao-geral .acesso-rapido .btns-acesso-rapido li {
+    width: 50%;
+    height: 31%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.visao-geral .acesso-rapido .btns-acesso-rapido li a {
+    font-size: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--cor-2);
+    transition: all 0.3s ease;
+}
+
+.visao-geral .acesso-rapido .btns-acesso-rapido li a:hover {
+    color: var(--cor-1);
+}
+
+.visao-geral .acesso-rapido .btns-acesso-rapido li a i {
+    font-size: 2.5vw;
+    text-align: center;
+}
+/* --> Fim do quadro de acesso rápido */
+
+.visao-geral .calendario {
+    grid-area: calendario;
+    background-color: var(--cor-4);
+    border-radius: 1vw 1vw 0 0;
+    margin: 1vw 1vw 0.5vw 0.5vw;
+    display: grid;
+    grid-template-rows: 7vh 1fr;
+    position: relative;
+}
+
+.visao-geral .calendario table {
+    border-collapse: collapse;
+}
+
+.visao-geral .calendario table thead th {
+    width: 10%;
+    font-size: 1vw;
+}
+
+.visao-geral .calendario table tbody td{
+    text-align: center;
+    font-size: 1vw;
+}
+
+.dia-atual {
+    background-color: var(--cor-1);
+    color: var(--cor-4);
+}
+
+.mes {
+    position: absolute;
+    top: 1.8vh;
+    right: 1vw;
+    color: var(--cor-1);
+    font-size: 1.5vw;
+}
+
+.mes-anterior, .mes-seguinte {
+    color: #dbdbdb;
+}
+
+.visao-geral .faturamento {
+    grid-area: faturamento;
+    background-color: var(--cor-4);
+    border-radius: 1vw;
+    margin: 0.5vw 1vw 1vw 0.5vw;
+    display: grid;
+    grid-template-rows: 7vh 1fr;
+    position: relative;
+}
+
+.visao-geral .faturamento form {
+    position: absolute;
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+    right: 1vw;
+}
+
+.visao-geral .faturamento form h2 {
+    font-size: 1.2vw;
+}
+
+.visao-geral .faturamento form select {
+    width: 8vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    color: var(--cor-2);
+    font-size: 1vw;
+    border: 0.15vw solid var(--cor-1);
+}
+
+.visao-geral .faturamento form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.visao-geral .faturamento .estatisticas {
+    background-color: var(--cor-2);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vh;
+}
+
+.visao-geral .faturamento .estatisticas div {
+    width: 33.2%;
+    background-color: var(--cor-4);
+}
+
+.visao-geral .faturamento .estatisticas .valor-vendido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vw;
+    padding: 3vh 0;
+}
+
+.visao-geral .faturamento .estatisticas .valor-vendido h2 {
+    font-size: 1.6vw;
+    color: var(--cor-2);
+}
+
+.visao-geral .faturamento .estatisticas .valor-vendido p {
+    color: var(--cor-1);
+    font-size: 2vw;
+}
+
+.visao-geral .faturamento .estatisticas .valor-vendido p span {
+    color: var(--cor-2);
+}
+
+.visao-geral .faturamento .estatisticas .valor-vendido h4 {
+    color: #646464;
+    font-size: 1.5vw;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vh 0;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos h2 {
+    font-size: 1.6vw;
+    color: var(--cor-2);
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos table {
+    width: 90%;
+    border-collapse: collapse;
+    height: 35vh;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos table tr {
+    height: 5.5vh;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos table tr th {
+    color: var(--cor-1);
+    text-align: start;
+    padding: 0.2vw;
+    font-size: 1vw;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-produtos table tr td {
+    color: var(--cor-2);
+    text-align: start;
+    padding: 0.2vw;
+    font-size: 1vw;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vh 0;
+
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes h2 {
+    font-size: 1.6vw;
+    color: var(--cor-2);
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes table {
+    width: 90%;
+    border-collapse: collapse;
+    height: 35vh;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes table tr {
+    height: 5.5vh;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes table tr th {
+    color: var(--cor-1);
+    text-align: start;
+    padding: 0.2vw;
+    font-size: 1vw;
+}
+
+.visao-geral .faturamento .estatisticas .melhores-clientes table tr td {
+    color: var(--cor-2);
+    text-align: start;
+    padding: 0.2vw;
+    font-size: 1vw;
+}
+/* --> Fim da estilização da aba Visão Geral */
+
+/* --> Inicio da aba Clientes <-- */
+.section-clientes .display-1{
+    width: 78vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.section-clientes .display-1 .header-lista-1 {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-4);
+}
+
+.section-clientes .display-1 .header-lista-1 form input[type=text] {
+    width: 20vw;
+    height: 4vh;
+    font-size: 1vw;
+    padding: 0 0.2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-1);
+    outline: 0;
+    margin-right: 1vw;
+}
+
+.section-clientes .display-1 .header-lista-1 form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.section-clientes .display-1 .header-lista-1 .btn-add {
+    margin-right: 1vw;
+}
+
+.section-clientes .display-1 .lista-1 {
+    grid-row: 2;
+    overflow: auto;
+}
+
+.section-clientes .display-1 .lista-1 table {
+    width: 78vw;
+    border-collapse: collapse;
+    border: 0.1vw solid #c2c2c2;
+}
+
+.section-clientes .display-1 .lista-1 table .header-row {
+    height: 5vh;
+}
+
+.section-clientes .display-1 .lista-1 table .header-row th {
+    text-align: start;
+    padding-left: 0.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: 0.15vw solid var(--cor-2);
+    font-size: 0.9vw;
+}
+
+.section-clientes .display-1 .lista-1 table .body-row {
+    height: 5vh;
+}
+
+.section-clientes .display-1 .lista-1 table .body-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.section-clientes .display-1 .lista-1 table .body-row td {
+    padding-left: 0.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+
+.section-clientes .display-1 .lista-1 table .body-row .actions {
+    width: 15%;
+}
+
+.section-clientes .display-1 .lista-1 .body-row .actions form {
+    display: inline;
+} 
+
+.section-clientes .display-1 .tela-cadastro-1 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    width: 78vw;
+    background-color: var(--cor-4);
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .header-lista-1 {
+    background-color: var(--cor-4);
+    height: 10vh;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .header-lista-1 .btn-back {
+    margin-right: 1vw;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente {
+    height: 90vh;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .inputs {
+    height: 70vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .inputs .input {
+    height: 10vh;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 45%;
+    margin-left: 2vw;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .inputs .input span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2vw;
+    margin: 0 1vw;
+    font-weight: 1000;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .inputs .input input {
+    height: 5vh;
+    margin: 0 1vw;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    border: 0.15vw solid var(--cor-2);
+    padding-left: 0.5vw;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .btns-cadastro-vendedor {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .btns-cadastro-vendedor input {
+    margin: 1vw;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .btns-cadastro-vendedor .list-btn-delete {
+    font-size: 1.2vw;
+}
+
+.section-clientes .display-1 .tela-cadastro-1 .form-crud-cliente .btns-cadastro-vendedor .list-btn-edit {
+    font-size: 1.5vw;
+}
+/* --> Fim da aba Clientes <-- */
+
+
+.section-produtos .display-1{
+    width: 78vw;
+    height: 100vh;
+    background-color: var(--cor-4);
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    grid-template-columns: 22vw 56vw;
+    grid-template-areas: 
+        'header-produtos header-produtos'
+        'form-cadastro-produtos produtos';
+}
+
+.header-produtos {
+    grid-area: header-produtos;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-produtos form {
+    margin-right: 1vw;
+}
+
+.header-produtos form input[type=text] {
+    width: 20vw;
+    height: 4vh;
+    font-size: 1vw;
+    padding: 0 0.2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-1);
+    outline: 0;
+    margin-right: 1vw;
+}
+
+.header-produtos form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.form-cadastro-produto {
+    grid-area: form-cadastro-produtos;
+    display: grid;
+    grid-template-rows: 7vh 83vh;
+}
+
+.form-cadastro-produto form {
+    display: grid;
+    grid-template-rows: 75vh 8vh;
+}
+
+.form-cadastro-produto form .input {
+    margin: 0.4vw 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20vw;
+}
+
+.form-cadastro-produto form .input span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2vw;
+}
+
+.form-cadastro-produto form .input input {
+    height: 5vh;
+    font-size: 1vw;
+    padding: 0 0.5vw;
+    border: 0.15vw solid var(--cor-2);
+    border-radius: 0.3vw;
+}
+
+.form-cadastro-produto form .input .input-imagem {
+    border: none;
+    padding: 0.3vw 0;
+    margin-top: 2vh;
+    font-size: 0.8vw;
+}
+
+.form-cadastro-produto form .btns-forms {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1vw;
+    margin-right: 1vw;
+    
+}
+
+.form-cadastro-produto form .btns-forms .list-btn-edit {
+    height: 5vh;
+}
+
+.produtos {
+    grid-area: produtos; 
+}
+
+.section-produtos .display-1 .produtos {
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+}
+
+.section-produtos .display-1 .produtos .produto {
+    height: 50vh;
+    width: 18vw;
+    background-color:rgb(204, 204, 204);
+    color: var(--cor-2);
+    font-family: var(--fonte-1);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 25vh 20vh 5vh;
+    grid-template-columns: 1fr;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-2);
+}
+
+.section-produtos .display-1 .produtos .produto .img-produto {
+    grid-row: 1;
+}
+
+.section-produtos .display-1 .produtos .produto .img-produto img {
+    height: 100%;
+    width: 18vw;
+    object-fit: cover;
+}
+
+.section-produtos .display-1 .produtos .produto .infos-produto {
+    grid-row: 2;
+    padding: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-produtos .display-1 .produtos .produto .btns-produto {
+    grid-row: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 18.02vw;
+}
+
+.section-produtos .editar-produto {
+    width: 78vw;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--cor-4);
+    right: 1vw;
+}
+
+.section-produtos .editar-produto .header-lista-1 {
+    width: 77vw;
+    height: 10vh;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto {
+    height: 90vh;
+
+}
+
+.section-produtos .editar-produto .form-cadastro-produto form {
+    height: 90vh;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto form .inputs {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto form .inputs .input {
+    width: 38vw;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto form .inputs .input-imagem {
+    position: absolute;
+    right: 11.5vw;
+    top: 67vh;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto .imagem-atual {
+    position: absolute;
+    left: 50%;
+    top: 12vh;
+    width: 39vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-produtos .editar-produto .form-cadastro-produto .imagem-atual img {
+    width: 18vw;
+}
+/* --> Início da estilização da aba Vendedores */
+.section-vendedores .display-1{
+    width: 78vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.section-vendedores .display-1 .header-lista-1 {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-4);
+    height: 10vh;
+}
+
+.section-vendedores .display-1 .header-lista-1 .btn-add {
+    margin-right: 1vw;
+}
+
+.section-vendedores .display-1 .lista-1 {
+    grid-row: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 90vh;
+}
+
+.section-vendedores .display-1 .lista-1 table {
+    width: 78vw;
+    border-collapse: collapse;
+    border: 0.1vw solid #c2c2c2;
+}
+
+.section-vendedores .display-1 .lista-1 table .header-row {
+    height: 5vh;
+}
+
+.section-vendedores .display-1 .lista-1 table .header-row th {
+    text-align: start;
+    padding-left: 0.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: 0.15vw solid var(--cor-2);
+    font-size: 0.9vw;
+}
+
+.section-vendedores .display-1 .lista-1 table .body-row {
+    height: 5vh;
+}
+
+.section-vendedores .display-1 .lista-1 table .body-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.section-vendedores .display-1 .lista-1 table .body-row td {
+    padding-left: 0.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+
+.section-vendedores .display-1 .lista-1 table .body-row .actions {
+    width: 15%;
+}
+
+.section-vendedores .display-1 .lista-1 .body-row .actions form {
+    display: inline;
+}
+
+/* --> Inicio da tela de cadastro de vendedores <-- */
+.section-vendedores .display-1 .tela-cadastro-1 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    width: 78vw;
+    background-color: var(--cor-4);
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .header-lista-1 {
+    background-color: var(--cor-4);
+    height: 10vh;
+}
+
+.section-vendedores .display-1 .header-lista-1 form input[type=text] {
+    width: 20vw;
+    height: 4vh;
+    font-size: 1vw;
+    padding: 0 0.2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-1);
+    outline: 0;
+    margin-right: 1vw;
+}
+
+.section-vendedores .display-1 .header-lista-1 form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .header-lista-1 .btn-back {
+    margin-right: 1vw;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor {
+    height: 90vh;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .inputs {
+    height: 70vh;
+    margin-top: 5vh;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .inputs .input {
+    height: 12vh;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .inputs .input span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2vw;
+    margin: 0 1vw;
+    font-weight: 1000;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .inputs .input input {
+    height: 5vh;
+    margin: 0 1vw;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    border: 0.15vw solid var(--cor-2);
+    padding-left: 0.5vw;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .btns-cadastro-vendedor {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .btns-cadastro-vendedor input {
+    margin: 1vw;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .btns-cadastro-vendedor .list-btn-delete {
+    font-size: 1.2vw;
+}
+
+.section-vendedores .display-1 .tela-cadastro-1 .form-crud-vendedor .btns-cadastro-vendedor .list-btn-edit {
+    font-size: 1.5vw;
+}
+
+/* Botão de Adcionar */
+.btn-add {
+    height: 6vh;
+    width: 12vw;
+    background-color: var(--cor-1);
+    border: none;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    color: var(--cor-3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-add:hover {
+    transform: scale(1.03);
+} 
+/* Botão de Adcionar */
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 5vh;
+    width: 5vw;
+    background-color: var(--cor-5);
+    border: none;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    font-weight: 600;
+    color: var(--cor-3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-back:hover {
+    transform: scale(1.03);
+} 
+
+/* Botões de CRUD das listas */
+.list-btn-delete {
+    background-color: var(--cor-5);
+    border: none;
+    border-radius: 0.3vw;
+    color: var(--cor-3);
+    margin: 0 0.36vw;
+    padding: 0.2vw 0.8vw;
+    font-size: 0.9vw;
+    font-weight: 500;
+}
+
+.list-btn-edit {
+    background-color: var(--cor-6);
+    border-radius: 0.3vw;
+    color: var(--cor-3);
+    margin: 0 0.36vw;
+    padding: 0.2vw 0.8vw;
+    font-size: 0.9vw;
+    border: none;
+}
+
+.list-btn-view {
+    background-color: var(--cor-1);
+    border-radius: 0.3vw;
+    color: var(--cor-3);
+    margin: 0 0.36vw;
+    padding: 0.2vw 0.8vw;
+    font-size: 0.9vw;
+    border: none;
+}
+
+.btn-active {
+    height: 10vh;
+}
+
+.pedido-status {
+    color: var(--cor-2);
+    width: 8vw;
+    height: 4vh;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Botões de CRUD das listas */
+
+
+.section-pedidos .display {
+    width: 78vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    background-color: var(--cor-4);
+}
+
+.section-pedidos .display .header-pedidos {
+    grid-row: 1;
+    width: 78vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-pedidos .display .header-pedidos a {
+    width: 20%;
+    height: 8vh;
+    border: none;
+    font-size: 1.2vw;
+    border-radius: 0.5vw;
+    background-color: var(--cor-2);
+    color: var(--cor-3);
+    transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-pedidos .display .header-pedidos a:hover {
+    height: 9vh;
+    background-color: #003c80;
+}
+
+.section-pedidos .display .body-pedidos {
+    grid-row: 2;
+}
+
+.section-pedidos .display .body-pedidos .buscar-cliente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    margin: 0 1vw;
+}
+
+.section-pedidos .display .body-pedidos .buscar-cliente form input[type=text] {
+    width: 20vw;
+    height: 4vh;
+    font-size: 1vw;
+    padding: 0 0.2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-1);
+    outline: 0;
+    margin-right: 1vw;
+}
+
+.section-pedidos .display .body-pedidos .buscar-cliente form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente {
+    height: 80vh;
+    margin: 0 1vw;
+    border: 0.15vw solid var(--cor-2);
+    overflow: auto;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    border-bottom: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente:hover{
+    background-color: #cccccc;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.7vw 0.2vw;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente div h2 {
+    color: var(--cor-1);
+    font-size: 1.2vw;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente div p {
+    font-size: 1vw;
+    color: var(--cor-2);
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente div input {
+    width: 10vw;
+    height: 5vh;
+    background-color: var(--cor-6);
+    color: var(--cor-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    font-size: 1vw;
+    transition: all 0.2s ease-in;
+    border: none;
+}
+
+.section-pedidos .display .body-pedidos .lista-cliente .cliente div input:hover {
+    transform: scale(1.05);
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos {
+    grid-area: dados-pedido;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .lista-produto-pedido {
+    width: 48vw;
+    height: 76vh;
+    margin: 1vw;
+    overflow: auto;
+    border: 0.15vw solid var(--cor-2);
+    border-radius: 0.5vw;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div {
+    padding: 0.5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div h2 {
+    font-size: 1vw;
+    color: var(--cor-1);
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div p {
+    font-size: 1vw;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div p span {
+    margin-right: 0.1vw;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos {
+    height: 80vh;
+    margin: 0 1vw;
+    border: 0.15vw solid var(--cor-2);
+    overflow: auto;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido {
+    height: 10vh;
+    display: flex;
+    border-bottom: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido:hover {
+    background-color: #cccccc;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.7vw 0.2vw;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido div h2 {
+    color: var(--cor-1);
+    font-size: 1.2vw;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido div p {
+    font-size: 1vw;
+    color: var(--cor-2);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido .btns-pedidos-a-finalizar {
+    width: 21vw; 
+    display: flex;
+    justify-content: center; 
+    flex-direction: row; 
+    align-items: center;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido .btns-pedidos-a-finalizar a {
+    width: 6vw;
+    margin: 0.5vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-3);
+    font-size: 1vw;
+    border-radius: 1vw;
+    transition: all 0.2s ease-in;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido .btns-pedidos-a-finalizar a:hover {
+    transform: scale(1.05);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido .btns-pedidos-a-finalizar button {
+    width: 6vw;
+    margin: 0 0.2vw;
+    height: 4vh;
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+    border-radius: 1vw;
+    transition: all 0.2s ease-in;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido .btns-pedidos-a-finalizar button:hover {
+    transform: scale(1.05);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado {
+    width: 100%;
+    height: 15vh;
+    padding: 0.2vw;
+    display: flex;
+    border-bottom: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-pedido {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-pedido h2 {
+    height: 5vh;
+    color: var(--cor-1);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-pedido div {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-pedido p {
+    font-size: 1vw;
+    height: 5vh;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-cliente {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-cliente h2 {
+    height: 5vh;
+    color: var(--cor-1);
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-cliente div {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .infos-cliente p {
+    font-size: 1vw;
+    height: 5vh;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .status {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-pedidos .display .body-pedidos .lista-pedidos .pedido-enviado .status p {
+    background-color: var(--cor-6);
+    width: 8vw;
+    height: 4vh;
+    font-size: 1.2vw;
+    color: var(--cor-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.novo-pedido .catalogo-produtos {
+    grid-area: catalogo;
+    background-color: #3a3a3a;
+}
+
+.section-pedidos .display-2 {
+    width: 78vw;
+    height: 100vh;
+    background-color: var(--cor-4);
+    margin: 1vw;
+    display: grid;
+    grid-template-columns: 50vw 28vw;
+    grid-template-rows: 13vh 87vh;
+    grid-template-areas: 
+        'infos-pedido catalogo'
+        'pedido-produtos catalogo'; 
+}
+
+.section-pedidos .display-2 .infos-pedido {
+    grid-area: infos-pedido;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-pedidos .display-2 .infos-pedido p {
+    font-size: 1.3vw;
+    margin-left: 1vw;
+    color: var(--cor-2);
+}
+
+.section-pedidos .display-2 .infos-pedido p span {
+    color: var(--cor-1);
+}
+
+.section-pedidos .display-2 .pedido-produtos {
+    grid-area: pedido-produtos; 
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos {
+    width: 48vw;
+    height: 77vh;
+    margin: 0 1vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div {
+    padding: 0.5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div h2 {
+    font-size: 1vw;
+    color: var(--cor-1);
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div p {
+    font-size: 1vw;
+}
+
+.section-pedidos .display-2 .pedido-produtos .lista-produtos .pedido-produto div p span {
+    margin-right: 0.1vw;
+}
+
+.section-pedidos .display-2 .pedido-produtos .btns-pedido-produtos {
+    margin: 0 1vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5vw;
+    width: 50vw;
+    height: 10vh;
+    float: right;
+}
+
+.section-pedidos .display-2 .pedido-produtos .btns-pedido-produtos p {
+    color: var(--cor-2);
+    font-size: 1vw;
+}
+
+.section-pedidos .display-2 .pedido-produtos .btns-pedido-produtos p span {
+    color: var(--cor-1);
+}
+
+.section-pedidos .display-2 .catalogo {
+    grid-area: catalogo;
+}
+
+.section-pedidos .display-2 .catalogo .busca-produtos {
+    height: 13vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.busca-produtos form input[type=text] {
+    width: 20vw;
+    height: 4vh;
+    font-size: 1vw;
+    padding: 0 0.2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-1);
+    outline: 0;
+    margin-right: 1vw;
+}
+
+.busca-produtos form input[type=submit] {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    font-size: 1vw;
+    border: none;
+}
+
+.section-pedidos .display-2 .catalogo .produtos {
+    height: 87vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw; 
+    overflow: auto;
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto {
+    width: 13vw;
+    height: 38vh;
+    background-color: var(--cor-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.1vw solid var(--cor-2);
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto img {
+    height: 18vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto h2 {
+    font-size: 1vw;
+    margin: 0.2vw;
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto p {
+    font-size: 1vw;
+    margin: 0.2vw;
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto button {
+    width: 10vw;
+    margin: 0 1.75vw;
+    font-size: 0.8vw;
+    border: 0.15vw solid var(--cor-2);
+    border-radius: 1vw;
+    background-color: var(--cor-1);
+    color: var(--cor-4);
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5vw;
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto form .input-quantidade {
+    width: 3.5vw;
+    font-size: 0.65vw;
+    border-radius: 0.5vw;
+    padding: 0 0.2vw;
+    border: 0.15vw solid var(--cor-2);
+}
+
+.section-pedidos .display-2 .catalogo .produtos .produto form .input-submit {
+    padding: 0 0.2vw;
+    font-size: 0.8vw;
+    background-color: var(--cor-6);
+    border-radius: 0.5vw;
+    border: 0.15vw solid var(--cor-2);
+    color: var(--cor-3);
+}
